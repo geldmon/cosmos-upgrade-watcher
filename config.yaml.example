@@ -5,7 +5,7 @@ chains:
 
   evmos_9001-2:
     endpoint: https://evmos-api.polkachu.com
-    remind_diff_blocks: 100
+    reminder_diff_blocks: 100
     
 interval_seconds: 5
 db_path: "/opt/data/upgrades.db"
