@@ -7,9 +7,13 @@
 </a>
 </p>
 
-# Governor
+# Cosmos Upgrade Watcher
 
-Governor is a watcher that checks for upcoming upgrades in Cosmos SDK blockchains and notifies you about them in a Slack channel
+Fork of governor with the additions:
+
+- Send a Slack reminder when getting close to upgrade height. Configurable via the `remind_diff_blocks` for each chain.
+
+> Cosmos Upgrade Watcher is a watcher that checks for upcoming upgrades in Cosmos SDK blockchains and notifies you about them in a Slack channel
 
 ## Example usage
 
@@ -22,5 +26,10 @@ docker compose up -d
 
 ## How it works
 
-Governor spins up a chain monitor per every chain and queries the `/cosmos/upgrade/v1beta1/current_plan` and checks if there is
+Cosmos Upgrade Watcher spins up a chain monitor per every chain and queries the `/cosmos/upgrade/v1beta1/current_plan` and checks if there is
 an upcoming upgrade. If there is an upcoming upgrade, it stores it in the local database and sends a request to the Slack webhook.
+
+Prometheus metrics are available (default port is 8000):
+- `cosmos_upgrade_watcher_last_checked`
+- `cosmos_upgrade_watcher_errors`
+

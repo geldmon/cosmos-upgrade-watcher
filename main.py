@@ -14,7 +14,7 @@ import shutil
 def init_db(db_conn):
     cur = db_conn.cursor()
     cur.execute(
-        "CREATE TABLE IF NOT EXISTS chains(chain_id TEXT PRIMARY KEY, upgrade_height int)"
+        "CREATE TABLE IF NOT EXISTS chains(chain_id TEXT PRIMARY KEY, upgrade_height int, is_reminder_sent bool)"
     )
 
 

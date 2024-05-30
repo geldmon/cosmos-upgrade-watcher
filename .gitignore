@@ -4,3 +4,4 @@ upgrades.db
 venv
 .vscode
 .DS_Store
+data
