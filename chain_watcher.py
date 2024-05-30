@@ -159,7 +159,7 @@ class ChainWatcher:
                     "type": "section",
                     "fields": [
                         {"type": "mrkdwn", "text": f"Name\n`{plan['name']}`"},
-                        {"type": "mrkdwn", "text": f"Height\n`{plan['height']}`"},
+                        {"type": "mrkdwn", "text": f"Height\n`{plan['height']}`"}
                     ],
                 },
             ],
@@ -182,7 +182,7 @@ class ChainWatcher:
                     "fields": [
                         {"type": "mrkdwn", "text": f"Name\n`{plan['name']}`"},
                         {"type": "mrkdwn", "text": f"Height\n`{plan['height']}`"},
-                        {"type": "mrkdwn", "text": f"Current Height\n`{block}`"},
+                        {"type": "mrkdwn", "text": f"Current Height\n`{block}`"}
                     ],
                 },
             ],
