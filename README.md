@@ -11,7 +11,7 @@
 
 Fork of governor with the additions:
 
-- Send a Slack reminder when getting close to upgrade height. Configurable via the `remind_diff_blocks` for each chain.
+- Send a Slack reminder when getting close to upgrade height. Configurable via the `reminder_diff_blocks` for each chain.
 
 > Cosmos Upgrade Watcher is a watcher that checks for upcoming upgrades in Cosmos SDK blockchains and notifies you about them in a Slack channel
 
