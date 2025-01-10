@@ -38,7 +38,10 @@ def fetch_block_height(endpoint: str):
         raise BlockRequestFailed(req.text)
 
     if "result" not in req.json():
-        raise BlockNotInRequest()
+        # try accessing with sync_info instead (Sei edge case)
+        if "sync_info" not in req.json():
+            raise BlockNotInRequest()
+        return int(req.json()['sync_info']['latest_block_height'])
 
     return int(req.json()['result']['sync_info']['latest_block_height'])
 
