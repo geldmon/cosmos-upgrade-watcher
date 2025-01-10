@@ -24,6 +24,15 @@ cp ./config.yaml ./config.yaml.example
 docker compose up -d
 ```
 
+Recommend to add a cronjob for periodically restarting the container, for example every 30mins, since the watcher loop may get stuck on failed rpcs calls for an unknown reason.
+
+Example:
+
+```bash
+# Add the following line in sudo crontab -e
+*/30 * * * * /bin/bash -c "cd /home/ubuntu/cosmos-upgrade-watcher && docker compose restart"
+```
+
 ## How it works
 
 Cosmos Upgrade Watcher spins up a chain monitor per every chain and queries the `/cosmos/upgrade/v1beta1/current_plan` and checks if there is
